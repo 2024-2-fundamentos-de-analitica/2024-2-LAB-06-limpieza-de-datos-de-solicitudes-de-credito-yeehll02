@@ -22,12 +22,11 @@ def pregunta_01():
     columnas=["sexo", "tipo_de_emprendimiento", "idea_negocio", "monto_del_credito", "línea_credito"]
 
     for col in columnas:
-        if col in df.columns:
-            df[col] = df[col].str.lower().str.strip()
-            df[col] = df[col].str.replace("_", " ").str.replace("-", " ")
-            df[col] = df[col].str.replace(",", "").str.replace("$", "")
-            df[col] = df[col].str.replace(".00", "") 
-            df[col] = df[col].str.strip()
+        df[col] = df[col].str.lower().str.strip()
+        df[col] = df[col].str.replace("_", " ").str.replace("-", " ")
+        df[col] = df[col].str.replace(",", "").str.replace("$", "")
+        df[col] = df[col].str.replace(".00", "") 
+        df[col] = df[col].str.strip()
 
     df["barrio"]=df["barrio"].str.lower()
     df["barrio"]=df["barrio"].str.replace("_", " ")
